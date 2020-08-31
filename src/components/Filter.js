@@ -3,6 +3,11 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 class Filter extends Component {
+
+dateChange=(e)=>{
+  console.log(e.target.value);
+  this.props.handleDateChange(e.target.value)
+}
   render() {
     return (
       <div>
@@ -18,10 +23,10 @@ class Filter extends Component {
           InputLabelProps={{
             shrink: true
           }}
-          onChange=""
+          onChange={this.dateChange.bind(this)}
         />
         <span style={{ verticalAlign: "bottom" }}>
-          <Button variant="contained" onClick="">
+          <Button variant="contained" onClick={this.props.filter}>
             Filter
           </Button>
         </span>

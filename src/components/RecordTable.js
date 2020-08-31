@@ -18,14 +18,34 @@ class RecordTable extends Component {
     this.handleDateChange = this.handleDateChange.bind(this);
     this.sort = this.sort.bind(this);
   }
-  filter() {}
-  handleDateChange = event => {};
 
-  sort() {}
+  filter() {
+    let filtered = this.props.txns.filter(txn=>txn.date===this.state.dateFilter)
+
+    this.setState({txns:filtered});
+
+  }
+  handleDateChange = event => {
+    this.setState({dateFilter:event})
+  };
+
+  sort() {
+    console.log(typeof(this.props.txns.amount))
+    let sorted = this.state.txns.sort((a,b)=>{
+      if(a.amount<b.amount){
+        return -1;
+      }
+      if(a.amount>b.amount){
+        return 1;
+      }
+      return 0;
+    })
+    this.setState({txns:sorted})
+  }
   render() {
     return (
       <div>
-        <Filter handleDateChange="" filter="" />
+        <Filter handleDateChange={this.handleDateChange} filter={this.filter} />
         <br />
         <br />
         <Table>
@@ -43,13 +63,17 @@ class RecordTable extends Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <TableCell>date</TableCell>
-              <TableCell>description</TableCell>
-              <TableCell>type === 1 ? "Debit" : "Credit"</TableCell>
-              <TableCell>amount</TableCell>
-              <TableCell>balance</TableCell>
-            </TableRow>
+           {this.state.txns.map(txn=>(
+             <TableRow key={txn.id}>
+             <TableCell>{txn.date}</TableCell>
+             <TableCell>{txn.description}</TableCell>
+             <TableCell>{txn.type === 1 ? "Debit" : "Credit"}</TableCell>
+             <TableCell>{txn.amount}</TableCell>
+             <TableCell>{txn.balance}</TableCell>
+           </TableRow>
+
+           ))}
+            
           </TableBody>
         </Table>
       </div>

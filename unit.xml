@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite id="0" name="/Users/761261/Desktop/React-Redux/HRAssessment/b9c9c693-dce8-4489-bcfc-c3e131411f48/src/test/App.test.js" errors="0" package="/Users/761261/Desktop/React-Redux/HRAssessment/b9c9c693-dce8-4489-bcfc-c3e131411f48/src/test/App.test.js" hostname="localhost" tests="5" failures="0" time="1.783" timestamp="2020-08-31T11:42:02">
+    <properties>
+    </properties>
+    <testcase classname="Banking Transactions &lt;App/&gt;" name="check default/initial state of the application" time="0">
+    </testcase>
+    <testcase classname="Banking Transactions &lt;App/&gt;" name="check filter by date" time="0">
+    </testcase>
+    <testcase classname="Banking Transactions &lt;App/&gt;" name="check sorting by amount" time="0">
+    </testcase>
+    <testcase classname="Banking Transactions &lt;App/&gt;" name="check filter by date and sorting by amount" time="0">
+    </testcase>
+    <testcase classname="Banking Transactions &lt;App/&gt;" name="check number of rows rendered" time="0">
+    </testcase>
+    <system-out/>
+    <system-err/>
+  </testsuite>
+</testsuites>
