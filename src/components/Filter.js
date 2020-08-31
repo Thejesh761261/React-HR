@@ -5,7 +5,6 @@ import Button from "@material-ui/core/Button";
 class Filter extends Component {
 
 dateChange=(e)=>{
-  console.log(e.target.value);
   this.props.handleDateChange(e.target.value)
 }
   render() {

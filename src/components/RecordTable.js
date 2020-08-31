@@ -30,7 +30,6 @@ class RecordTable extends Component {
   };
 
   sort() {
-    console.log(typeof(this.props.txns.amount))
     let sorted = this.state.txns.sort((a,b)=>{
       if(a.amount<b.amount){
         return -1;
